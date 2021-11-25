@@ -7,9 +7,9 @@
                     Featured
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary" id="testBtn">Go somewhere</a>
+                    <h5 class="card-title">Hi, It's Olaniyan.Gafar</h5>
+                    <p class="card-text">This code is to demonstrate how our embed code for some parts of the website work. This part should contain your ticket level and prices.</p>
+                    <a href="#" class="btn btn-primary" id="testBtn">Buy Tickets</a>
                 </div>
             </div>
         </div>
