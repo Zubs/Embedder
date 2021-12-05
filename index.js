@@ -175,6 +175,13 @@ function loadStyles () {
     `;
 }
 
+function loadScripts () {
+    const head = document.querySelector('head');
+    head.innerHTML += `
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    `;
+}
+
 function loadContent () {
     var target = document.getElementById('gafarKey');
     target.innerHTML = `
@@ -200,7 +207,7 @@ function loadContent () {
                             <i class="fa fa-map-marker"></i>
                             <p>Ghana National Stadium</p>
                         </div>
-                        <a id="#pay" href="" onclick="preventDefault(); pay()">Book now</a>
+                        <a id="#pay" href="" onclick="event.preventDefault(); pay()">Book now</a>
                     </section>
                 </article>
             </div>
@@ -208,37 +215,53 @@ function loadContent () {
     `;
 }
 
+function makeModal (text) {
+    return `
+    <div id="myModal" class="modal fade" role="dialog" style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>${text}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>   
+          </div>
+    </div>
+    `;
+}
+
 function pay () {
+    const target = document.getElementById('gafarKey');
+    if (!target) {
+        alert("Reload to continue");
+    }
+
+    trigger = document.getElementById('trigger');
+    if (!trigger) {
+        let trigger = document.createElement('button');
+        trigger.innerText = 'Click me and die';
+        trigger.id = 'trigger';
+        target.append(trigger);
+    }
+
+    trigger.addEventListener('click', () => {
+        let m1 = makeModal('Testing this here');
+        m1.modal('show');
+    });
+
+    trigger.click();
+
     alert('payment button clicked');
 }
 
 window.addEventListener('load', async function () {
     await loadStyles();
     await loadContent();
+    await loadScripts();
 })
-
-// (function () {
-//     var target = document.getElementById('gafarKey');
-//     target.innerHTML = `
-//         <div class="container">
-//             <div class="card">
-//                 <div class="card-header">
-//                     Featured
-//                 </div>
-//                 <div class="card-body">
-//                     <h5 class="card-title">Special title treatment</h5>
-//                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-//                     <a href="#" class="btn btn-primary" id="testBtn">Go somewhere</a>
-//                 </div>
-//             </div>
-//         </div>
-//     `
-//
-//     var button = document.getElementById('testBtn')
-//
-//     if (button) {
-//         button.addEventListener('click', () => {
-//             alert('clicked');
-//         })
-//     }
-// })();
