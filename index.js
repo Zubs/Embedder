@@ -226,6 +226,10 @@ function makeModal (text) {
                 </div>
                 <div class="modal-body">
                     <p>${text}</p>
+                <div class="card-body">
+                    <h5 class="card-title">Hi, It's Olaniyan.Gafar</h5>
+                    <p class="card-text">This code is to demonstrate how our embed code for some parts of the website work. This part should contain your ticket level and prices.</p>
+                    <a href="#" class="btn btn-primary" id="testBtn">Buy Tickets</a>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
