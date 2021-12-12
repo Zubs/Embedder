@@ -2,7 +2,8 @@ function loadStyles () {
     let head = document.querySelector('head');
     head.innerHTML += `
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zubs/Embedder/css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zubs/Embedder/css/modal.css">
     `;
 }
 
@@ -43,56 +44,23 @@ function loadContent () {
                 </article>
             </div>
         </section>
-    `;
-}
-
-function makeModal (text) {
-    return `
-    <div id="myModal" class="modal fade" role="dialog" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>${text}</p>
-                <div class="card-body">
-                    <h5 class="card-title">Hi, It's Olaniyan.Gafar</h5>
-                    <p class="card-text">This code is to demonstrate how our embed code for some parts of the website work. This part should contain your ticket level and prices.</p>
-                    <a href="#" class="btn btn-primary" id="testBtn">Buy Tickets</a>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>   
-          </div>
-    </div>
+        
+        <section class="modal-parent">
+            <div class="modal" id="the-modal" >
+                <div class="modal-content">
+                    <iframe src = "https://goal.com" title = "PayStack" frameborder = "0"></iframe>
+                    <span class="modal-close-btn">
+                        &times;
+                    </span>
+                </div>         
+            </div>
+        </section>
     `;
 }
 
 function pay () {
-    const target = document.getElementById('gafarKey');
-    if (!target) {
-        alert("Reload to continue");
-    }
-
-    trigger = document.getElementById('trigger');
-    if (!trigger) {
-        let trigger = document.createElement('button');
-        trigger.innerText = 'Click me and die';
-        trigger.id = 'trigger';
-        target.append(trigger);
-    }
-
-    trigger.addEventListener('click', () => {
-        let m1 = makeModal('Testing this here');
-        m1.modal('show');
-    });
-
-    trigger.click();
-
-    alert('payment button clicked');
+    const modal = document.querySelector('.modal-parent')
+    modal.style.display = 'block'
 }
 
 window.addEventListener('load', async function () {
