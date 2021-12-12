@@ -15,7 +15,7 @@ function loadScripts () {
 }
 
 function loadContent () {
-    var target = document.getElementById('gafarKey');
+    let target = document.getElementById('gafarKey');
     target.innerHTML = `
         <section class="container">
             <div class="row">
