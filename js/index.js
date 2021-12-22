@@ -48,7 +48,7 @@ function loadContent () {
         <section class="modal-parent">
             <div class="modal" id="the-modal" >
                 <div class="modal-content">
-                    <iframe src = "https://goal.com" title = "PayStack" frameborder = "0"></iframe>
+                    <iframe src = "https://fast.com" title = "PayStack" frameborder = "0"></iframe>
                     <span class="modal-close-btn">
                         &times;
                     </span>
