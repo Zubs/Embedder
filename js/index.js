@@ -1,70 +1,102 @@
 function loadStyles () {
     let head = document.querySelector('head');
     head.innerHTML += `
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zubs/Embedder/css/main.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zubs/Embedder/css/modal.css">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     `;
 }
 
-function loadScripts () {
-    const head = document.querySelector('head');
-    head.innerHTML += `
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    `;
-}
+// function loadScripts () {
+//     const head = document.querySelector('head');
+//     head.innerHTML += `
+//         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+//     `;
+// }
 
 function loadContent () {
     let target = document.getElementById('gafarKey');
     target.innerHTML = `
-        <section class="container">
-            <div class="row">
-                <article class="card fl-left">
-                    <section class="date">
-                        <time datetime="23rd dec">
-                            <span>23</span><span>Dec</span>
-                        </time>
-                    </section>
-                    <section class="card-cont">
-                        <small>Burna Boy</small>
-                        <h3>Live In Accra</h3>
-                        <div class="even-date">
-                            <i class="fa fa-calendar"></i>
-                            <time>
-                                <span>Thursday, 23 december, 2021</span>
-                                <span>09:00pm to 5:00am</span>
-                            </time>
+        <div class="py-12">
+            <section class="relative max-w-7xl mx-auto">
+                <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                    <div>
+                        <div class="flex flex-col shadow-lg">
+                            <div class="bg-white p-6 flex flex-col justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 12px; cursor: pointer" onclick="toggleGetTicketButton()">
+                                    <path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                                </svg>
+                            </div>
+                            <div class="">
+                                <div class="relative">
+                                    <img
+                                        class="h-32 w-full"
+                                        src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="-mt-24 z-50 absolute">
+                                    <p class="font-bold text-2xl px-4 text-wrap text-white">
+                                        ABC FESTIVAL OF<br />
+                                        GOATS
+                                    </p>
+                                </div>
+                                <li class="flex shadow-sm rounded-md" id="eventDateAndTimeSection">
+                                    <div class="flex bg-black h-20 justify-evenly w-full text-white text-sm font-medium">
+                                        <div class="grid grid-cols-2 gap-20">
+                                            <div class="">
+                                                <p class="text-sm font-medium py-3 text-white">
+                                                    Online Shopping
+                                                </p>
+                                                <p class="text-sm font-medium text-white">
+                                                    3, Park Steet off, Ojoo
+                                                </p>
+                                            </div>
+                                            <div class="">
+                                                <p class="text-sm font-medium py-3 text-white">
+                                                    19:00 CAT Prompt
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="bg-white p-6 flex flex-col justify-center" id="getTicketButtonSection">
+                                <div class="my-6">
+                                    <button
+                                        type="button"
+                                        class="w-full text-center py-3 border border-transparent text-base font-bold shadow-sm text-white bg-black hover:bg-black focus:outline-none"
+                                    >
+                                        <span class="text-center"> Get Ticket </span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="even-info">
-                            <i class="fa fa-map-marker"></i>
-                            <p>Ghana National Stadium</p>
-                        </div>
-                        <a id="#pay" href="" onclick="event.preventDefault(); pay()">Book now</a>
-                    </section>
-                </article>
-            </div>
-        </section>
-        
-        <section class="modal-parent">
-            <div class="modal" id="the-modal" >
-                <div class="modal-content">
-                    <iframe src = "https://fast.com" title = "PayStack" frameborder = "0"></iframe>
-                    <span class="modal-close-btn">
-                        &times;
-                    </span>
-                </div>         
-            </div>
-        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
     `;
 }
 
-function pay () {
-    const modal = document.querySelector('.modal-parent')
-    modal.style.display = 'block'
+function toggleGetTicketButton() {
+    const getTicketButtonSection = document.querySelector('#getTicketButtonSection');
+    const eventDateAndTimeSection = document.querySelector('#eventDateAndTimeSection');
+
+    if (getTicketButtonSection.style.display === 'none') {
+        getTicketButtonSection.style.display = 'block';
+        eventDateAndTimeSection.style.display = 'block';
+    } else {
+        getTicketButtonSection.style.display = 'none';
+        eventDateAndTimeSection.style.display = 'none';
+    }
 }
+
+// function pay () {
+//     const modal = document.querySelector('.modal-parent')
+//     modal.style.display = 'block'
+// }
 
 window.addEventListener('load', async function () {
     await loadStyles();
     await loadContent();
-    await loadScripts();
+    // await loadScripts();
 })

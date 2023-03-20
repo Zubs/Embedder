@@ -17,6 +17,11 @@
         >
           <div>
             <div class="flex flex-col shadow-lg">
+              <div class="bg-white p-6 flex flex-col justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 12px; cursor: pointer" onclick="toggleGetTicketButton()">
+                  <path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                </svg>
+              </div>
               <div class="">
                 <div class="relative">
                   <img
@@ -31,7 +36,7 @@
                     GOATS
                   </p>
                 </div>
-                <li class="flex shadow-sm rounded-md">
+                <li class="flex shadow-sm rounded-md" id="eventDateAndTimeSection">
                   <div
                     class="flex bg-black h-20 justify-evenly w-full text-white text-sm font-medium"
                   >
@@ -53,7 +58,7 @@
                   </div>
                 </li>
               </div>
-              <div class="bg-white p-6 flex flex-col justify-center">
+              <div class="bg-white p-6 flex flex-col justify-center" id="getTicketButtonSection">
                 <div class="my-6">
                   <button
                     type="button"
@@ -67,6 +72,21 @@
           </div>
         </div>
       </section>
+
+      <script>
+        function toggleGetTicketButton() {
+          const getTicketButtonSection = document.querySelector('#getTicketButtonSection');
+          const eventDateAndTimeSection = document.querySelector('#eventDateAndTimeSection');
+
+          if (getTicketButtonSection.style.display === 'none') {
+            getTicketButtonSection.style.display = 'block';
+            eventDateAndTimeSection.style.display = 'block';
+          } else {
+            getTicketButtonSection.style.display = 'none';
+            eventDateAndTimeSection.style.display = 'none';
+          }
+        }
+      </script>
 
       <!-- Section 2 -->
 
