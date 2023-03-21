@@ -20,7 +20,9 @@ function loadContent () {
                 <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
                     <div>
                         <div class="flex flex-col shadow-lg">
-                            <div class="bg-white p-6 flex flex-col justify-center">
+                            <div class="bg-white p-6 flex justify-between">
+                                <img src="../img/logo.png" alt="" style="width: 80px; height: 20px;">
+
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 12px; cursor: pointer" onclick="toggleGetTicketButton()">
                                     <path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
                                 </svg>
@@ -29,8 +31,9 @@ function loadContent () {
                                 <div class="relative">
                                     <img
                                         class="h-32 w-full"
-                                        src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                                        src="../img/bg.png"
                                         alt=""
+                                        style="width: 388px; height: 116px;"
                                     />
                                 </div>
                                 <div class="-mt-24 z-50 absolute">
